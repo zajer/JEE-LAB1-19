@@ -10,7 +10,7 @@ public class App {
     private static String criterionForResult2 = "Yolo";
     private static String criterionForResult3 = "Yolo";
     private static String criterionForResult4 = "Yolo";
-    
+    private static String criterionForResult5 = "Yolo";
     public static void main(String[] args) {
         EntityManager dbm = Persistence.createEntityManagerFactory(persistanceUnitName).createEntityManager();
         
@@ -36,7 +36,12 @@ public class App {
         dbm.getTransaction().begin();
         dbm.persist(res4);
         dbm.getTransaction().commit();
-        
-        
+        //Usuwanie encji
+        /*
+        T1 res5 = dbm.find(T1.class, criterionForResult5);
+        dbm.getTransaction().begin();
+        dbm.remove(res5);
+        dbm.getTransaction().commit();
+        */
     }
 }
